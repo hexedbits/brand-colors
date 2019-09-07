@@ -8,4 +8,4 @@
 - white `#E6DFDF`
 - black `#241C1C`
 
-![](colors.png)
+[![](colors.png)](https://color.adobe.com/mythemes)
