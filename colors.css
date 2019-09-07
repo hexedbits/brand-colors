@@ -1,21 +1,21 @@
 
 /* Hex */
-.hb-red-hex { color: #A81113; }
-.hb-red-bright-hex { color: #E64E51; }
+.hb-red-hex { color: #E0161A; }
+.hb-red-bright-hex { color: #F05154; }
 .hb-red-dark-hex { color: #54080A; }
 .hb-white-hex { color: #E6DFDF; }
 .hb-black-hex { color: #241C1C; }
 
 /* RGBA */
-.hb-red-rgba { color: rgba(168, 17, 19, 1); }
-.hb-red-bright-rgba { color: rgba(230, 78, 81, 1); }
+.hb-red-rgba { color: rgba(224, 22, 26, 1); }
+.hb-red-bright-rgba { color: rgba(240, 81, 84, 1); }
 .hb-red-dark-rgba { color: rgba(84, 8, 10, 1); }
 .hb-white-rgba { color: rgba(230, 223, 223, 1); }
 .hb-black-rgba { color: rgba(36, 28, 28, 1); }
 
 /* HSLA */
-.hb-red-hsla { color: hsla(359, 81, 36, 1); }
-.hb-red-bright-hsla { color: hsla(358, 75, 60, 1); }
+.hb-red-hsla { color: hsla(358, 82, 48, 1); }
+.hb-red-bright-hsla { color: hsla(358, 84, 62, 1); }
 .hb-red-dark-hsla { color: hsla(358, 82, 18, 1); }
 .hb-white-hsla { color: hsla(0, 12, 88, 1); }
 .hb-black-hsla { color: hsla(0, 12, 12, 1); }
