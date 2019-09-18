@@ -10,7 +10,7 @@
 //
 //  License
 //  Copyright © 2019 Jesse Squires, Hexed Bits
-//  Released under an MIT license:
+//  Released under an MIT license
 //  https://opensource.org/licenses/MIT
 //
 
