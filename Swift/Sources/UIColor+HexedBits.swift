@@ -15,26 +15,32 @@
 
 import UIKit
 
+extension Color {
+    var uiColor: UIColor {
+        UIColor(red: self.red, green: self.green, blue: self.blue, alpha: self.alpha)
+    }
+}
+
 extension UIColor {
 
-	public class var red: UIColor {
-		return UIColor(red: 0.88, green: 0.09, blue: 0.10, alpha: 1.0)
+	public class var hb_red: UIColor {
+        Color.hb_red.uiColor
 	}
 
-	public class var brightRed: UIColor {
-		return UIColor(red: 0.94, green: 0.32, blue: 0.33, alpha: 1.0)
+	public class var hb_brightRed: UIColor {
+		Color.hb_brightRed.uiColor
 	}
 
-	public class var darkRed: UIColor {
-		return UIColor(red: 0.33, green: 0.03, blue: 0.04, alpha: 1.0)
+	public class var hb_darkRed: UIColor {
+        Color.hb_darkRed.uiColor
 	}
 
-	public class var white: UIColor {
-		return UIColor(red: 0.90, green: 0.87, blue: 0.87, alpha: 1.0)
+	public class var hb_white: UIColor {
+        Color.hb_white.uiColor
 	}
 
-	public class var black: UIColor {
-		return UIColor(red: 0.14, green: 0.11, blue: 0.11, alpha: 1.0)
+	public class var hb_black: UIColor {
+        Color.hb_black.uiColor
 	}
 }
 
