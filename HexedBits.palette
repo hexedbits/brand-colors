@@ -1,0 +1,69 @@
+{
+  "updatedAt" : "2020-02-11 05:04:41",
+  "dock" : false,
+  "index" : 0,
+  "id" : "6DE51D36-6D75-5B38-8B0F-FFD6329BE818",
+  "originalName" : "Palette",
+  "sip" : {
+    "build" : "224",
+    "version" : "2.2.4"
+  },
+  "colors" : [
+    {
+      "originalName" : "Lust",
+      "red" : 0.87843000888824463,
+      "green" : 0.08626999706029892,
+      "alpha" : 1,
+      "blue" : 0.10196000337600708,
+      "createdAt" : "2020-02-11 00:28:19",
+      "id" : "B454F932-2BDE-E572-2198-82EAB69240B4",
+      "name" : "Red"
+    },
+    {
+      "originalName" : "Carnation",
+      "id" : "4E4BDBAA-A14C-C681-138C-C94E3BB624B0",
+      "alpha" : 1,
+      "name" : "Bright Red",
+      "green" : 0.31764999032020569,
+      "red" : 0.94117999076843262,
+      "createdAt" : "2020-02-11 00:28:33",
+      "blue" : 0.32940998673439026
+    },
+    {
+      "blue" : 0.039220001548528671,
+      "createdAt" : "2020-02-11 00:28:47",
+      "originalName" : "Mahogany",
+      "id" : "7968AAC8-881B-B81D-D3E9-9D6DE03C7D3C",
+      "red" : 0.32940998673439026,
+      "green" : 0.031369999051094055,
+      "alpha" : 1,
+      "name" : "Dark Red"
+    },
+    {
+      "name" : "White",
+      "createdAt" : "2020-02-11 05:04:24",
+      "green" : 0.87450999021530151,
+      "alpha" : 1,
+      "originalName" : "Bon Jour",
+      "red" : 0.90196001529693604,
+      "id" : "0F7B2A5F-FD47-7D68-83B8-8F237B352CE1",
+      "blue" : 0.87450999021530151
+    },
+    {
+      "alpha" : 1,
+      "originalName" : "Oil",
+      "red" : 0.14117999374866486,
+      "createdAt" : "2020-02-11 05:04:38",
+      "green" : 0.10980000346899033,
+      "name" : "Black",
+      "id" : "9BFC1B58-8D1B-B0A9-9F13-365D0C9EA571",
+      "blue" : 0.10980000346899033
+    }
+  ],
+  "cloud" : false,
+  "like" : true,
+  "createdAt" : "2020-02-11 00:26:29",
+  "readOnly" : false,
+  "name" : "Hexed Bits",
+  "lock" : false
+}
