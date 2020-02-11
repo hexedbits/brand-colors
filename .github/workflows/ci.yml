@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+env:
+  DEVELOPER_DIR: /Applications/Xcode_11.3.app/Contents/Developer
+
+  MACOS_SDK: macosx10.15
+  MACOS_DEST: "arch=x86_64"
+
+  IOS_SDK: iphonesimulator13.2
+  IOS_DEST: "OS=13.3,name=iPhone 11"
+
+jobs:
+
+  Build:
+    name: SwiftPM Build
+    runs-on: macOS-latest
+    steps:
+      - name: git checkout
+        uses: actions/checkout@v1
+
+      - name: xcode version
+        run: xcodebuild -version -sdk
+
+      - name: list simulators
+        run: xcrun simctl list
+
+      - name: SPM generate xcodeproj
+        run: swift package generate-xcodeproj
+
+      - name: Build iOS
+        run: |
+          set -o pipefail
+          xcodebuild clean build -sdk "$IOS_SDK" -destination "$IOS_DEST" | xcpretty -c;
+
+      - name: Build macOS
+        run: |
+          set -o pipefail
+          xcodebuild clean build -sdk "$MACOS_SDK" -destination "$MACOS_DEST" | xcpretty -c;
