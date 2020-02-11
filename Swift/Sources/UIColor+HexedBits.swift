@@ -23,25 +23,25 @@ extension Color {
 
 extension UIColor {
 
-	public class var hb_red: UIColor {
+    public class var hb_red: UIColor {
         Color.hb_red.uiColor
-	}
+    }
 
-	public class var hb_brightRed: UIColor {
-		Color.hb_brightRed.uiColor
-	}
+    public class var hb_brightRed: UIColor {
+        Color.hb_brightRed.uiColor
+    }
 
-	public class var hb_darkRed: UIColor {
+    public class var hb_darkRed: UIColor {
         Color.hb_darkRed.uiColor
-	}
+    }
 
-	public class var hb_white: UIColor {
+    public class var hb_white: UIColor {
         Color.hb_white.uiColor
-	}
+    }
 
-	public class var hb_black: UIColor {
+    public class var hb_black: UIColor {
         Color.hb_black.uiColor
-	}
+    }
 }
 
 #endif

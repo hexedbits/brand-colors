@@ -24,12 +24,12 @@ let package = Package(
     products: [
         .library(
             name: "HexedBitsColors",
-            targets: ["HexedBitsColors"]),
+            targets: ["HexedBitsColors"])
     ],
     targets: [
         .target(
             name: "HexedBitsColors",
-            path: "Sources"),
+            path: "Sources")
     ],
     swiftLanguageVersions: [.v5]
 )
