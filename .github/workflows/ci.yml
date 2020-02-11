@@ -1,0 +1,41 @@
+name: CI
+
+on: [push, pull_request]
+
+env:
+  SCHEME: HexedBitsColors
+  DEVELOPER_DIR: /Applications/Xcode_11.3.app/Contents/Developer
+  MACOS_SDK: macosx10.15
+  IOS_SDK: iphonesimulator13.2
+
+jobs:
+
+  Build:
+    name: SwiftPM Build
+    runs-on: macOS-latest
+    strategy:
+      matrix:
+        sdk: [MACOS_SDK, IOS_SDK]
+        include:
+          - sdk: MACOS_SDK
+            destination: ["arch=x86_64"]
+
+          - sdk: IOS_SDK
+            destination: ["OS=13.3,name=iPhone 11"]
+    steps:
+      - name: git checkout
+        uses: actions/checkout@v1
+
+      - name: xcode version
+        run: xcodebuild -version -sdk
+
+      - name: list simulators
+        run: xcrun simctl list
+
+      - name: SPM generate xcodeproj
+        run: swift package generate-xcodeproj
+
+      - name: Build - ${{ matrix.destination }}
+        run: |
+          set -o pipefail
+          xcodebuild clean build -scheme "$SCHEME" -sdk "${{ matrix.sdk }}" -destination "${{ matrix.destination }}" | xcpretty -c;
