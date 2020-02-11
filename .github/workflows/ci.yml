@@ -9,7 +9,6 @@ on:
       - master
 
 env:
-  SCHEME: HexedBitsColors
   DEVELOPER_DIR: /Applications/Xcode_11.3.app/Contents/Developer
 
   MACOS_SDK: macosx10.15
@@ -39,9 +38,9 @@ jobs:
       - name: Build iOS
         run: |
           set -o pipefail
-          xcodebuild clean build -scheme "$SCHEME" -sdk "$IOS_SDK" -destination "$IOS_DEST" | xcpretty -c;
+          xcodebuild clean build -sdk "$IOS_SDK" -destination "$IOS_DEST" | xcpretty -c;
 
       - name: Build macOS
         run: |
           set -o pipefail
-          xcodebuild clean build -scheme "$SCHEME" -sdk "$MACOS_SDK" -destination "$MACOS_DEST" | xcpretty -c;
+          xcodebuild clean build -sdk "$MACOS_SDK" -destination "$MACOS_DEST" | xcpretty -c;
