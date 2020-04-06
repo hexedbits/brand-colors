@@ -9,7 +9,7 @@ on:
       - master
 
 env:
-  DEVELOPER_DIR: /Applications/Xcode_11.3.app/Contents/Developer
+  DEVELOPER_DIR: /Applications/Xcode_11.4.app/Contents/Developer
 
   MACOS_SDK: macosx10.15
   MACOS_DEST: "arch=x86_64"
@@ -19,7 +19,7 @@ env:
 
 jobs:
 
-  Build:
+  job-build:
     name: SwiftPM Build
     runs-on: macOS-latest
     steps:
