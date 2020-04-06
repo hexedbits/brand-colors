@@ -14,8 +14,8 @@ env:
   MACOS_SDK: macosx10.15
   MACOS_DEST: "arch=x86_64"
 
-  IOS_SDK: iphonesimulator13.2
-  IOS_DEST: "OS=13.3,name=iPhone 11"
+  IOS_SDK: iphonesimulator13.4
+  IOS_DEST: "OS=13.4,name=iPhone 11"
 
 jobs:
 
