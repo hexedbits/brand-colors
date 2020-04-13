@@ -18,9 +18,8 @@ env:
   IOS_DEST: "OS=13.4,name=iPhone 11"
 
 jobs:
-
-  job-build:
-    name: SwiftPM Build
+  job-main:
+    name: Build
     runs-on: macOS-latest
     steps:
       - name: git checkout
@@ -30,7 +29,9 @@ jobs:
         run: xcodebuild -version -sdk
 
       - name: list simulators
-        run: xcrun simctl list
+        run: |
+          xcrun simctl delete unavailable
+          xcrun simctl list
 
       - name: SPM generate xcodeproj
         run: swift package generate-xcodeproj
@@ -38,9 +39,9 @@ jobs:
       - name: Build iOS
         run: |
           set -o pipefail
-          xcodebuild clean build -sdk "$IOS_SDK" -destination "$IOS_DEST" | xcpretty -c;
+          xcodebuild clean build -sdk "$IOS_SDK" -destination "$IOS_DEST" | xcpretty -c
 
       - name: Build macOS
         run: |
           set -o pipefail
-          xcodebuild clean build -sdk "$MACOS_SDK" -destination "$MACOS_DEST" | xcpretty -c;
+          xcodebuild clean build -sdk "$MACOS_SDK" -destination "$MACOS_DEST" | xcpretty -c
