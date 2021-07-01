@@ -30,7 +30,7 @@ env:
 jobs:
   main:
     name: SwiftPM Build
-    runs-on: macOS-11
+    runs-on: macOS-latest
     steps:
       - name: git checkout
         uses: actions/checkout@v2
