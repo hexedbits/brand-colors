@@ -1,27 +1,36 @@
+# GitHub Actions Virtual Environments
+# https://github.com/actions/virtual-environments/
+
 name: CI
 
 on:
   push:
     branches:
       - main
+    paths:
+      - '.github/workflows/ci.yml'
+      - 'Package*'
+      - 'Sources/**/*.*'
+      - 'Tests/**/*.*'
   pull_request:
     branches:
       - main
+    paths:
+      - '.github/workflows/ci.yml'
+      - 'Package*'
+      - 'Sources/**/*.*'
+      - 'Tests/**/*.*'
 
 env:
-  # https://github.com/actions/virtual-environments/tree/main/images/macos
-  DEVELOPER_DIR: /Applications/Xcode_12.3.app/Contents/Developer
+  DEVELOPER_DIR: /Applications/Xcode_12.5.app/Contents/Developer
 
-  MACOS_SDK: macosx11.1
-  MACOS_DEST: "arch=x86_64"
-
-  IOS_SDK: iphonesimulator14.3
-  IOS_DEST: "OS=14.3,name=iPhone 12 Mini"
+  IOS_SDK: iphonesimulator14.5
+  IOS_DEST: "OS=14.5,name=iPhone 12 Mini"
 
 jobs:
-  job-main:
-    name: Build
-    runs-on: macOS-latest
+  main:
+    name: SwiftPM Build
+    runs-on: macOS-11
     steps:
       - name: git checkout
         uses: actions/checkout@v2
@@ -34,15 +43,11 @@ jobs:
           xcrun simctl delete unavailable
           xcrun simctl list
 
-      - name: SPM generate xcodeproj
-        run: swift package generate-xcodeproj
+      - name: swift build
+        run: swift build
 
-      - name: Build iOS
+      - name: iOS build
         run: |
           set -o pipefail
+          swift package generate-xcodeproj
           xcodebuild clean build -sdk "$IOS_SDK" -destination "$IOS_DEST" | xcpretty -c
-
-      - name: Build macOS
-        run: |
-          set -o pipefail
-          xcodebuild clean build -sdk "$MACOS_SDK" -destination "$MACOS_DEST" | xcpretty -c
