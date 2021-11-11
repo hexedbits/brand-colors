@@ -4,4 +4,4 @@
 
 *Brand colors for Hexed Bits*
 
-Made with [Sip](https://sipapp.io).
+Palettes made with [Sip](https://sipapp.io).
