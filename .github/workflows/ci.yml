@@ -46,4 +46,4 @@ jobs:
       - name: iOS build
         run: |
           set -o pipefail
-          xcodebuild test -scheme "$SCHEME" -sdk "$IOS_SDK" -destination "$IOS_DEST" | xcpretty -c
+          xcodebuild build -scheme "$SCHEME" -sdk "$IOS_SDK" -destination "$IOS_DEST" | xcpretty -c
